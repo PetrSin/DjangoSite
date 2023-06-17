@@ -1,0 +1,24 @@
+{% extends 'main/layout.html'%}
+
+
+{% block title %}{{ title|upper }}{% endblock %}
+
+{% block content %}
+    <div class="zlo">
+        <h1>{{ title }}</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi neque suscipit ducimus tempora! Aperiam sequi, doloribus assumenda autem atque, illum eligendi omnis itaque dolores provident fuga, quia asperiores odit sit.</p>
+        
+        {% for el in values%}
+            {% if el == 'Hello' %} 
+                {%filter upper%}   
+                <p>{{el}}</p>
+                {% endfilter%}
+            {% endif %}
+        {% endfor %}
+        
+        {{ user }}
+        <p></p>
+
+        <button class="btn btn-warning">ЖОПА</button>
+    </div>
+{% endblock %}
